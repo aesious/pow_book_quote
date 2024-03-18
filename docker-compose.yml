@@ -1,0 +1,11 @@
+version: '3'
+services:
+  server:
+    environment:
+      SERVER_FLAGS: ${SERVER_FLAGS}
+    image: pow_server_image
+    ports:
+      - "8081:8081"
+    command: ./main ${SERVER_FLAGS}
+  client:
+    image: pow_client_image
